@@ -1,0 +1,28 @@
+/* styles.css */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .country-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .country-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .country-card h2 {
+    margin: 10px 0;
+  }
+  
+  .country-card p {
+    color: #666;
+  }
+  
