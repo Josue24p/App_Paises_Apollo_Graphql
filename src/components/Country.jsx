@@ -15,7 +15,6 @@ const Country = ({country}) => {
 
   return (
     <div className='dashboard'>
-      {data.countries.map((country) => (
         <Card key={country.code} className="country-card">
           <img src={`https://source.unsplash.com/1600x900/?${country.name}`} alt={country.name} />
           <CardContent>
@@ -31,7 +30,6 @@ const Country = ({country}) => {
             ))}
           </CardContent>
         </Card>
-      ))}
     </div>
   );
 };
