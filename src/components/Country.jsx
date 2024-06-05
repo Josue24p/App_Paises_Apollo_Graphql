@@ -1,17 +1,14 @@
-// components/CountryCard.js
+
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { useQuery } from '@apollo/client';
 
-import { Country_details } from '../graphql/getCountries.graphql';
-
+/*recibir el prop de country que viene de Dashboard en este caso para explicar y recordar
+al momento de la función handleCountryClick(country) recibe el parametro country
+y dentro de la función se guarda el país en setSelectedCountry(country) 
+Al momento de dar el click entonces si el país es seleccionado se va mostrar
+el componente Country que retorna la información del país seleccionado*/
 const Country = ({country}) => {
-
-  const { loading, error, data } = useQuery(Country_details);
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <div className='dashboard'>
