@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { TextField, Button, Popover, List, ListItem, ListItemText } from '@mui/material'
 import { useQuery } from '@apollo/client';
-import {GET_COUNTRIES} from '../graphql/getCountries.graphql';
+import { GET_COUNTRIES } from '../graphql/getCountries.graphql';
 import CountryCard from '../components/CountryCard';
 import Country from '../components/Country';
 export default function Dashboard() {
@@ -14,7 +14,7 @@ export default function Dashboard() {
     //manejamos un estado para poder buscar el país y guardarlo
     const [searchTerm, setSearchTerm] = useState('');
 
-    const [selectedCountry, setSelectedCountry ] = useState(null);
+    const [selectedCountry, setSelectedCountry] = useState(null);
     //estado para manejar lo ingresado cada vez que se de click al botón
     /* const [finalSearchTerm, setFinalSearchTerm] = useState(''); */
 
@@ -24,30 +24,31 @@ export default function Dashboard() {
     //asimismo actualiza el estado searchTerm
     const handleSearchChange = (event) => {
         setSearchTerm(event.target.value);
-      };
-      
+        setSelectedCountry(null);
+    };
+
     const handleCountryClick = (country) => {
         setSelectedCountry(country);
     }
-      //función en caso le doy al botón buscar se ejecuta
-      //busca el país escrito en textField
-     /*  const handleSearchClick = () => {
-        setFinalSearchTerm(searchTerm);
-      }; */
+    //función en caso le doy al botón buscar se ejecuta
+    //busca el país escrito en textField
+    /*  const handleSearchClick = () => {
+       setFinalSearchTerm(searchTerm);
+     }; */
 
     /*   const handleContinentFilterClick = (event) => {
         setAnchorEl(event.currentTarget);
     }; */
 
-   /*  const handleContinentFilterClose = () => {
-        setAnchorEl(null);
-    }; */
+    /*  const handleContinentFilterClose = () => {
+         setAnchorEl(null);
+     }; */
 
     //creamos una variable que contenga los países que coincidan con
     //el texto buscado utilizado el método filter, para poder solo traer el solicitado
     const filteredCountries = data?.countries?.filter(country =>
         country.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+    );
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
@@ -64,21 +65,31 @@ export default function Dashboard() {
                                 variant="outlined" style={{ marginRight: '60px', width: "100%", marginLeft: '60px' }}
                                 value={searchTerm}
                                 onChange={handleSearchChange}
-                            /><Button variant="contained" color="primary">
-                                Buscar
-                            </Button>
-                            
+                            />
                         </div>
                     </Typography>
                     <div className="dashboard">
-                        {filteredCountries.map((country) => (
-                            <CountryCard key={country.code} country={country} onClick={()=>handleCountryClick(country)} />
-                        ))}
+
+                       {filteredCountries.length > 0 ? (
+                            filteredCountries.map((country) => (
+                                <CountryCard key={country.code} country={country} onClick={() => handleCountryClick(country)} />
+                            ))
+                        ) : (
+                            <Typography>No countries found</Typography>
+                        )}
                     </div>
                 </Box>
-                <Box sx={{ flex: 1 }}>
-                {selectedCountry && <Country country={selectedCountry} />}
+                {selectedCountry &&(
+                <Box sx={{ flex: 0 }}>
+                
+                    <Box component="main" sx={{  marginTop: "25px", marginRight: "100px" }}>
+                        <div className="dashboard">
+                         <Country country={selectedCountry} />
+                        </div>
+                    </Box>
+                   
                 </Box>
+                 )}
             </Box>
         </>
     )
