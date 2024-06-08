@@ -100,15 +100,15 @@ export default function Dashboard() {
 
     return (
         <>
-            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' } }}>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'row', md: 'row' } }}>
                 <Sidebar />
-                <Box style={{border: '2px solid green'}} component="main" sx={{ flexGrow: 1, p: 3, marginTop: { xs: "70px", md: "70px" }, marginLeft: { xs: "58px", md:'10px' } }}>
+                <Box  component="main" sx={{ flexGrow: 1, p: 3, marginTop: { xs: "70px", md: "70px" }, marginLeft: { xs: "58px", md:'10px' } }}>
                     <Typography variant="h4">
                         <Grid style={{ display: 'flex', alignItems: 'center' }}>
                             <TextField
                                 label="País"
                                 placeholder="Escribe el país que deseas ver"
-                                variant="outlined" style={{ marginRight: '60px', width: "100%", marginLeft: '60px', border: '2px solid blue' }}
+                                variant="outlined" style={{ marginRight: '60px', width: "100%", marginLeft: '60px' }}
                                 value={searchTerm}
                                 onChange={handleSearchChange}
                                 onClick={handleTextFieldClick}
@@ -130,20 +130,18 @@ export default function Dashboard() {
                         </Box>
                     )}
                     <Grid
-                    sx={{ flexGrow: 1, p: 3, marginTop: { xs: "20px", md: "5px" }, marginLeft: { xs: "5px", md:'5px' }, marginRight:{xs:'5px', md:'5px'} }}
-                    style={{border: '2px solid red'}} className="dashboard">
+                    sx={{ flexGrow: 1, p: 3, marginTop: { xs: "20px", md: "5px" }, marginLeft: { xs: "5px", md:'5px' }, marginRight:{xs:'5px', md:'5px'}, display:'grid', gap:'20px', gridTemplateColumns:'repeat(auto-fit, minmax(300px, 1fr))', padding: '20px' }}
+                     >
                         
                         {filteredCountries.length > 0 ? (
                             filteredCountries.map((country) => (
-                                <Grid className="dashboard"
-                                sx={{flexGrow: 1,padding:{xs:'5px', md:'15px'}}}
-                                style={{border: '2px solid skyblue'}}>
+
                                 <CountryCard
                                     key={country.code}
                                     country={country}
                                     onClick={() => handleCountryClick(country)}
                                 />
-                                </Grid>
+
                             ))
                         ) : (
                             <Typography>No countries found</Typography>
@@ -157,9 +155,9 @@ export default function Dashboard() {
                         marginTop: { xs: '20px', md: '25px' },
                         marginRight: { md: '10px' },
                     }}
-                    style={{border: '2px solid yellow'}}>
+                    /* style={{border: '2px solid yellow'}} */>
 
-                        <Box style={{border: '2px solid black'}} component="main" sx={{ flexGrow: 1, p: 3, marginLeft: { xs: "20px" } }}>
+                        <Box /* style={{border: '2px solid black'}} */ component="main" sx={{ flexGrow: 1, p: 3, marginLeft: { xs: "20px" } }}>
                             <div className="dashboard">
                                 <Country country={selectedCountry} onDeselect={handleDeselect} />
                             </div>
