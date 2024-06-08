@@ -8,7 +8,7 @@ import { Typography } from '@mui/material';
 const CountryCard = ({ country, onClick }) => {
   return (
     <Card key={country.code} onClick={onClick} className="country-card">
-      <img src={`https://source.unsplash.com/1600x900/?${country.name}`} alt={country.name} />
+      <img src={`https://picsum.photos/seed/${country.code}/1600/900`} alt={country.name} />
       <CardContent>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <img

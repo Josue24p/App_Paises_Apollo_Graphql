@@ -23,7 +23,7 @@ const Country = ({ country }) => {
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div className='dashboard'>
         <Card key={country.code} className="country-card" sx={{ width: '300px', height: '440px', overflow: 'hidden', position: 'relative' }}>
-          <img src={`https://source.unsplash.com/1600x900/?${country.name}`} alt={country.name} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
+          <img src={`https://picsum.photos/seed/${country.code}/1600/900`} alt={country.name} style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
           <CardContent>
             <img
               src={`https://flagcdn.com/${country.code.toLowerCase()}.svg`}
