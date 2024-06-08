@@ -30,6 +30,10 @@ export default function Dashboard() {
     const handleCountryClick = (country) => {
         setSelectedCountry(country);
     }
+
+    const handleDeselect = () => {
+        setSelectedCountry(null);
+    };
     //función en caso le doy al botón buscar se ejecuta
     //busca el país escrito en textField
     /*  const handleSearchClick = () => {
@@ -84,7 +88,7 @@ export default function Dashboard() {
                 
                     <Box component="main" sx={{  marginTop: "25px", marginRight: "100px" }}>
                         <div className="dashboard">
-                         <Country country={selectedCountry} />
+                         <Country country={selectedCountry} onDeselect={handleDeselect} />
                         </div>
                     </Box>
                    
