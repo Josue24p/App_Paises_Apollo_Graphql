@@ -6,43 +6,112 @@ const Continent = ({onContinentClick }) => {
     return (
 
             <Grid container spacing={2}
-            sx={{display: 'flex', flexDirection:{xs:'row', md:'row'},width:{xs:'300px', md:'700px'}, height:{xs:'400px', md:'500px'}}}
-            style={{ border: '1px solid #ddd', margin: 15, borderRadius: 8}}>
+            sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                width: {xs: '100%', md:'500px'},
+                height: {xs:'auto', md: 'auto'},
+                border: '1px solid blue',
+                margin: 1,
+                borderRadius: 2,
+                padding: 1
+            }}
+            /* style={{ border: '1px solid #ddd', margin: 15, borderRadius: 8, width:'700px'}} */>
                 <Grid item xs={12}
-                sx={{width:{xs:'30px',}}}
-                style={{ display: 'flex', justifyContent: 'space-between',  padding: '10px' }}>
-                    <Typography variant='h6' style={{padding:10, margin: 2}}> Filtrar por continentes </Typography>
-                    <Button style={{ color: 'skyblue', marginRight:15}}onClick={() => onContinentClick('')}> Limpiar </Button>
+                sx={{
+                    display:'flex',
+                    justifyContent: 'space-between',
+                    padding: {xs:1, md:2},
+                    border: '1px solid green'
+                }}
+                >
+                    <Typography variant='h6' sx={{padding: 1, margin:0}}> Filtrar por continentes </Typography>
+                    <Button sx={{color: 'skyblue'}} onClick={() => onContinentClick('')}> Limpiar </Button>
                 </Grid>
-                <Grid item xs={4} style={{  padding: '10px' }}>
+                <Grid item 
+                xs={4}
+                sm={4}
+                md={4}
+                sx={{
+                    display:'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 1,
+                    border: '1px solid yellow'
+                }}>
                 <Button onClick={() => onContinentClick('Europe')}>
-                    <img src="https://images.vexels.com/media/users/3/274893/isolated/preview/df68b1f9cb65e5970a9b5adb7ed660b7-silueta-del-mapa-del-continente-europeo.png" alt="Europa" style={{width: '200px', height: '150px'}}/>
+                    <img src="https://images.vexels.com/media/users/3/274893/isolated/preview/df68b1f9cb65e5970a9b5adb7ed660b7-silueta-del-mapa-del-continente-europeo.png" alt="Europa" 
+                    style={{width: '100%', height:'auto', maxWidth:{xs:'50px', md:'200px'}}}/>
                     </Button>
-                    <Typography variant='h6' style={{textAlign:'center'}}> Europa </Typography>
+                    <Typography variant='h6' sx={{ textAlign: 'center', mt: 1 }}> Europa </Typography>
                 </Grid>
-                <Grid item xs={4} style={{  padding: '10px' }}>
+                <Grid item 
+                xs={4}
+                sm={4}
+                md={4}
+                sx={{
+                    display:'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 1,
+                    border: '1px solid yellow'
+                }}>
                 <Button onClick={() => onContinentClick('South America')}>
-                <img src="https://cdn.pixabay.com/photo/2015/04/09/16/36/america-714733_1280.png" alt="America" style={{width: '200px', height: '150px'}}/>
+                <img src="https://cdn.pixabay.com/photo/2015/04/09/16/36/america-714733_1280.png" alt="America" 
+                style={{width: '100%', height:'auto', maxWidth:{xs:'50px', md:'200px'}}}/>
                 </Button>
-                    <Typography variant='h6' style={{textAlign:'center'}}> America </Typography>
+                    <Typography variant='h6' sx={{ textAlign: 'center', mt: 1 }}> America </Typography>
                 </Grid>
-                <Grid item xs={4} style={{  padding: '10px' }}>
+                <Grid item 
+                xs={4}
+                sm={4}
+                md={4}
+                sx={{
+                    display:'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 1,
+                    border: '1px solid yellow'
+                }}>
                 <Button onClick={() => onContinentClick('Asia')}>
-                <img src="https://images.vexels.com/media/users/3/274898/isolated/lists/e4bd4e5987b3099ea7b4e248ffa946a0-silueta-del-mapa-del-continente-asia-tico.png" alt="Asia" style={{width: '200px', height: '150px'}}/>
+                <img src="https://images.vexels.com/media/users/3/274898/isolated/lists/e4bd4e5987b3099ea7b4e248ffa946a0-silueta-del-mapa-del-continente-asia-tico.png" alt="Asia" 
+                style={{width: '100%', height:'auto', maxWidth:{xs:'50px', md:'200px'}}}/>
                 </Button>
-                    <Typography variant='h6' style={{textAlign:'center'}}> Asia </Typography>
+                    <Typography variant='h6' sx={{ textAlign: 'center', mt: 1 }}> Asia </Typography>
                 </Grid>
-                <Grid item xs={4} style={{  padding: '10px' }}>
+                <Grid item 
+                xs={4}
+                sm={4}
+                md={4}
+                sx={{
+                    display:'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 1,
+                    border: '1px solid yellow'
+                }}>
                 <Button onClick={() => onContinentClick('Oceania')}>
-                <img src="https://cdn.pixabay.com/photo/2013/07/12/17/00/continent-151644_1280.png" alt="Oceania" style={{width: '200px', height: '150px'}}/>
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/17/00/continent-151644_1280.png" alt="Oceania" 
+                style={{width: '100%', height:'auto', maxWidth:{xs:'50px', md:'200px'}}}/>
                 </Button>
-                    <Typography variant='h6' style={{textAlign:'center'}}> Oceania </Typography>
+                    <Typography variant='h6' sx={{ textAlign: 'center', mt: 1 }}> Oceania </Typography>
                 </Grid>
-                <Grid item xs={4} style={{  padding: '10px' }}>
+                <Grid item 
+                xs={4}
+                sm={4}
+                md={4}
+                sx={{
+                    display:'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: 1,
+                    border: '1px solid yellow'
+                }}>
                 <Button onClick={() => onContinentClick('Africa')}>
-                <img src="https://svgsilh.com/svg/28615.svg" alt="Africa" style={{width: '200px', height: '150px'}}/>
+                <img src="https://svgsilh.com/svg/28615.svg" alt="Africa" 
+                style={{width: '100%', height:'auto', maxWidth:{xs:'50px', md:'200px'}}}/>
                 </Button>
-                    <Typography variant='h6' style={{textAlign:'center'}}> Africa </Typography>
+                    <Typography variant='h6' sx={{ textAlign: 'center', mt: 1 }}> Africa </Typography>
                 </Grid>
             </Grid>
     )
