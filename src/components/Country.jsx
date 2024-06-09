@@ -2,6 +2,7 @@
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { FixedSizeList } from 'react-window';
 import { Box, Typography, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 /*recibir el prop de country que viene de Dashboard en este caso para explicar y recordar
