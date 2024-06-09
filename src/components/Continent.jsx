@@ -5,8 +5,12 @@ import { Grid, Button, Typography } from '@mui/material';
 const Continent = ({onContinentClick }) => {
     return (
 
-            <Grid container spacing={2} style={{ border: '1px solid #ddd', width:'700px', margin: 15, borderRadius: 8}}>
-                <Grid item xs={12} style={{ display: 'flex', justifyContent: 'space-between',  padding: '10px' }}>
+            <Grid container spacing={2}
+            sx={{display: 'flex', flexDirection:{xs:'row', md:'row'},width:{xs:'300px', md:'700px'}, height:{xs:'400px', md:'500px'}}}
+            style={{ border: '1px solid #ddd', margin: 15, borderRadius: 8}}>
+                <Grid item xs={12}
+                sx={{width:{xs:'30px',}}}
+                style={{ display: 'flex', justifyContent: 'space-between',  padding: '10px' }}>
                     <Typography variant='h6' style={{padding:10, margin: 2}}> Filtrar por continentes </Typography>
                     <Button style={{ color: 'skyblue', marginRight:15}}onClick={() => onContinentClick('')}> Limpiar </Button>
                 </Grid>

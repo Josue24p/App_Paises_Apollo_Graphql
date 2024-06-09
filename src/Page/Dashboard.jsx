@@ -121,10 +121,6 @@ export default function Dashboard() {
                             zIndex: 1,
                             background: 'white',
                             p: 0.5,
-                            marginLeft: { xs: '10%', md: '50px' },
-                            marginTop: { xs: '10%', md: '0' },
-                            width: { xs: '80%', md: 'auto' },
-                            height: { xs: 'auto', md: 'auto' }
                         }}>
                             <Continent onContinentClick={handleContinentClick} />
                         </Box>
