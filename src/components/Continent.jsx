@@ -11,7 +11,6 @@ const Continent = ({onContinentClick }) => {
                 flexDirection: 'row',
                 width: {xs: '100%', md:'500px'},
                 height: {xs:'auto', md: 'auto'},
-                border: '1px solid blue',
                 margin: 1,
                 borderRadius: 2,
                 padding: 1
@@ -21,8 +20,6 @@ const Continent = ({onContinentClick }) => {
                 sx={{
                     display:'flex',
                     justifyContent: 'space-between',
-                    padding: {xs:1, md:2},
-                    border: '1px solid green'
                 }}
                 >
                     <Typography variant='h6' sx={{padding: 1, margin:0}}> Filtrar por continentes </Typography>
@@ -37,7 +34,6 @@ const Continent = ({onContinentClick }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 1,
-                    border: '1px solid yellow'
                 }}>
                 <Button onClick={() => onContinentClick('Europe')}>
                     <img src="https://images.vexels.com/media/users/3/274893/isolated/preview/df68b1f9cb65e5970a9b5adb7ed660b7-silueta-del-mapa-del-continente-europeo.png" alt="Europa" 
@@ -54,7 +50,6 @@ const Continent = ({onContinentClick }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 1,
-                    border: '1px solid yellow'
                 }}>
                 <Button onClick={() => onContinentClick('South America')}>
                 <img src="https://cdn.pixabay.com/photo/2015/04/09/16/36/america-714733_1280.png" alt="America" 
@@ -71,7 +66,6 @@ const Continent = ({onContinentClick }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 1,
-                    border: '1px solid yellow'
                 }}>
                 <Button onClick={() => onContinentClick('Asia')}>
                 <img src="https://images.vexels.com/media/users/3/274898/isolated/lists/e4bd4e5987b3099ea7b4e248ffa946a0-silueta-del-mapa-del-continente-asia-tico.png" alt="Asia" 
@@ -88,7 +82,6 @@ const Continent = ({onContinentClick }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 1,
-                    border: '1px solid yellow'
                 }}>
                 <Button onClick={() => onContinentClick('Oceania')}>
                 <img src="https://cdn.pixabay.com/photo/2013/07/12/17/00/continent-151644_1280.png" alt="Oceania" 
@@ -105,7 +98,6 @@ const Continent = ({onContinentClick }) => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     padding: 1,
-                    border: '1px solid yellow'
                 }}>
                 <Button onClick={() => onContinentClick('Africa')}>
                 <img src="https://svgsilh.com/svg/28615.svg" alt="Africa" 
