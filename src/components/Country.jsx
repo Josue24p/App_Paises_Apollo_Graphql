@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -24,7 +23,7 @@ const Country = ({ country, onDeselect }) => {
     <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       <div className='dashboard'>
         <Card key={country.code} className="country-card" sx={{ width: '300px', height: '440px', overflow: 'hidden', position: 'relative' }}>
-        <IconButton
+          <IconButton
             sx={{ position: 'absolute', top: 8, right: 8 }}
             onClick={(e) => {
               e.stopPropagation();
@@ -83,3 +82,4 @@ const Country = ({ country, onDeselect }) => {
 };
 
 export default Country;
+

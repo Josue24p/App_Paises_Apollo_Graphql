@@ -7,8 +7,13 @@ import { Typography } from '@mui/material';
 
 const CountryCard = ({ country, onClick }) => {
   return (
-    <Card key={country.code} onClick={onClick} className="country-card">
-      <img src={`https://picsum.photos/seed/${country.code}/1600/900`} alt={country.name} />
+    <Card
+    sx={{borderRadius:'8px', overflow:'hidden', textAlign:'center', width:{xs:'250px', md:'300px'}, cursor:'pointer'}}
+    /* style={{border: '2px solid orange'}} */
+    key={country.code} onClick={onClick}>
+      {/*  <img src={`https://source.unsplash.com/1600x900/?${country.name}`} alt={country.name} /> ya no funciona este link de generar img*/}
+      <img src={`https://picsum.photos/seed/${country.code}/1600/900`} alt={country.name}
+      style={{ width: '100%', height: '150px', objectFit: 'cover' }} />
       <CardContent>
       <Box sx={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
         <img
@@ -16,7 +21,7 @@ const CountryCard = ({ country, onClick }) => {
           alt={`Flag of ${country.name}`}
           style={{ width: '80px', height: '50px', objectFit: 'cover' }}
         />
-        <h2 style={{margin: 0}}>{country.name}</h2>
+        <Typography variant='h6' style={{margin: 0}}>{country.name}</Typography>
         </Box>
         <Typography variant='h6'> <p style={{margin: 0}}>{country.continent.name}</p></Typography>
 
