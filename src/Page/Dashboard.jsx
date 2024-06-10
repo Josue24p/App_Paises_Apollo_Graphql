@@ -56,6 +56,10 @@ export default function Dashboard() {
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
 
+    /*Versión 2.0 del Dashboard Paises 
+    funcionamiento, muestra paises al cargar, filtrar por país,
+    muestra el país seleccionado información adicional, icono de X del país
+    seleccionado para poder cerrar o deseleccionar*/
     return (
         <>
             <Box sx={{ display: 'flex' }}>
